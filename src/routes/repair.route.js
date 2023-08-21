@@ -14,11 +14,9 @@ router
   .get(repairController.findAllRepair)
   .post(repairController.createRepair);
 
-router.use(authMiddleware.protect);
-
 router
   .use('/:id', repairMiddleware.existRepair)
-  .use(authMiddleware.restrictTo('Employee'))
+
   .route('/:id')
   .get(repairController.findOneRepair)
   .patch(repairController.updateRepair)

@@ -10,10 +10,7 @@ exports.existUser = async (req, res, next) => {
   });
 
   if (!user) {
-    return res.status(404).json({
-      status: 'error',
-      message: `user with id ${id}, not found`,
-    });
+    return next(new AppError(`user with id ${id}, not found`));
   }
 
   req.user = user;

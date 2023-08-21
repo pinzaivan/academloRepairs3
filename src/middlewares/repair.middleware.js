@@ -9,10 +9,7 @@ exports.existRepair = async (req, res, next) => {
     },
   });
   if (!repair) {
-    return res.status(404).json({
-      status: 'error',
-      message: `Repair wiht ${id} not found`,
-    });
+    return next(new AppErro('Repair wiht ${id} not found'));
   }
   req.repair = repair;
   next();
