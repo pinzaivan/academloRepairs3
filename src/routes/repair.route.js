@@ -2,7 +2,7 @@ const express = require('express');
 
 //controllers
 const repairController = require('./../controllers/repair.controller');
-//middlewares
+//middlewaressss
 const valitadtionMiddelware = require('../middlewares/valitadion.middleware');
 const repairMiddleware = require('../middlewares/repair.middleware.js');
 const authMiddleware = require('../middlewares/auth.middleware');
